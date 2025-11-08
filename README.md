@@ -23,29 +23,39 @@ Open terminal and try execute some kali linux commands
 
 SQL Injection is a sort of infusion assault that makes it conceivable to execute malicious SQL statements. These statements control a database server behind a web application. Assailants can utilize SQL Injection vulnerabilities to sidestep application safety efforts. They can circumvent authentication and authorization of a page or web application and recover the content of the whole SQL database. 
 Identify IP address using ifconfig in Metasploitable2
-#OUTPUT
+# OUTPUT
+<img width="722" height="405" alt="image" src="https://github.com/user-attachments/assets/1f61c9a0-6a49-4f0c-82f8-d48cd9ee1034" />
+
 
 Use the above ip address to access the apache webserver of Metasploitable2 from kali/parrot linux. In Kali Linux use the ip address in a web browser.
 ##  OUTPUT
+<img width="955" height="1013" alt="Screenshot 2025-11-08 085652" src="https://github.com/user-attachments/assets/cdb9addd-a124-473a-ae7f-2b8f1c537f9d" />
+
 
 
 Select Multidae from the menu listed as shown above. The page is displayed as below:
 ##  OUTPUT
+<img width="964" height="1023" alt="Screenshot 2025-11-08 085707" src="https://github.com/user-attachments/assets/d59c2ec1-18c1-4b7b-bbe7-fce61d79f1f8" />
 
 
 
 Click on the menu Login/Register and register for an account
 ##  OUTPUT
 
+<img width="964" height="1007" alt="Screenshot 2025-11-08 085729" src="https://github.com/user-attachments/assets/34cc1a31-3028-4ee7-ae16-9a273097c2dc" />
+
 
 
 Click on the link “Please register here”
 ##  OUTPUT
+<img width="969" height="1018" alt="Screenshot 2025-11-08 085801" src="https://github.com/user-attachments/assets/2e009844-8f0e-401b-99a5-51fd0b31f605" />
 
 
 
 Click on “Create Account” to display the following page:
 ##  OUTPUT
+<img width="943" height="1016" alt="Screenshot 2025-11-08 080918" src="https://github.com/user-attachments/assets/30f2f4d7-342f-423a-9265-eb74eaea8841" />
+
 
 
 The login structure we will use in our examples is straightforward. It contains two input fields (username and password), which are both vulnerable. The back-end content creates a query to approve the username and secret key given by the client. Here is an outline of the page rationale:
@@ -54,6 +64,7 @@ The login structure we will use in our examples is straightforward. It contains 
 ($query = “SELECT * FROM users WHERE username=’$_POST[username]’ AND password=’$_POST[password]’“;).
  For the username put “ganesh” or “anything” and for the password put (anything’ or ‘1’=’1) or (admin’ or ‘1’=’1) then try to log in, and you’ll be presented with an admin login page.
 ##  OUTPUT
+
 
 
 
@@ -124,6 +135,8 @@ we will be using the “User Info” page from Mutillidae to perform a Union-Bas
 
 After logging out, Now choose the menu as shown below:
 ##  OUTPUT
+<img width="935" height="744" alt="image" src="https://github.com/user-attachments/assets/e9005459-f024-4875-821c-4f6bda2fda7e" />
+
 
 
 
@@ -132,10 +145,13 @@ From this point, all our attack vectors will be performed in the URL section of 
 
 
 
+
 Since we do not know the number of columns, we start at 1. To find the exact amount of columns, the number is incremented until an error related to the “ORDER BY” clause is returned. In this example, we incremented it to 6 and received an error message, so it means that the number of columns is lower than 6.
 
 The browser url of this info page need to be modified with the url as below:
 ##  OUTPUT
+<img width="945" height="962" alt="image" src="https://github.com/user-attachments/assets/4bac6396-7d1a-4bfa-b6e4-3415a86f8275" />
+
 
 
 
@@ -147,13 +163,15 @@ After adding the order by 6 into the existing url , the following error statemen
 
 
 When we ordered by 5, it worked and displayed some information. It means there are five columns that we can work with. Following screenshot shows that the url modified to have statement added with ordered by 5 replacing 6.
-#OUTPUT
+# OUTPUT
 
 
 
 
  As it is having 5 columns the query worked fine and it provides the correct result
 ##  OUTPUT
+<img width="935" height="975" alt="Screenshot 2025-11-07 205725" src="https://github.com/user-attachments/assets/b55a25a4-e05b-46c6-90f8-d3e481cd605b" />
+
 
 
 
@@ -207,6 +225,8 @@ Once we discovered all available column names, we can extract information from t
 
 Ex: (union select 1,username,password,is_admin,5 from accounts).
 ##  OUTPUT
+<img width="903" height="1002" alt="Screenshot 2025-11-08 083426" src="https://github.com/user-attachments/assets/4647246f-61d7-4416-b281-cf1329fa32d2" />
+
 
 
 
